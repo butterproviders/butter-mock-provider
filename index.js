@@ -1,4 +1,5 @@
 const ButterProvider = require('butter-provider')
+const debug = require('debug')('butter-mock-provider')
 
 const defaultConfig = {
     name: 'mock',
@@ -50,27 +51,28 @@ const mockData = Array.from(Array(99)).reduce((a, c ,i) => (
     })
 ), {})
 
+const debugAndResolve = (context, ret) => {
+    debug(context, 'returning', JSON.stringify(ret, null, 2))
+    return Promise.resolve(ret)
+}
+
 module.exports = class MockProvider extends ButterProvider {
     constructor (args, config= defaultConfig) {
         super(args, config)
     }
 
     fetch() {
-        return Promise.resolve({
+        return debugAndResolve('fetch', {
             results: [Object.values(mockData)],
             hasMore: false
         })
     }
 
     details(id, oldData) {
-        return Promise.resolve(
-            Object.assign(oldData, mockData[id])
-        )
+        return debugAndResolve('details', Object.assign(oldData, mockData[id]))
     }
 
     random() {
-        return Promise.resolve(
-            mockData[42]
-        )
+        return debugAndResolve('random', mockData[42])
     }
 }
