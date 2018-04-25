@@ -1,0 +1,36 @@
+{
+  "name": "butter-mock-provider",
+  "version": "0.0.1",
+  "description": "A Butter provider for used to test stuff that uses butter-providers",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./node_modules/butter-provider/tests/*.js",
+    "lint": "eslint tests/** index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/butterproviders/butter-mock-provider.git"
+  },
+  "keywords": [
+    "ccc",
+    "butter",
+    "streaming"
+  ],
+  "author": "Niv Sardi",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/butterproviders/butter-mock-provider/issues"
+  },
+  "homepage": "https://github.com/butterproviders/butter-mock-provider#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "butter-provider": "butterproviders/butter-provider",
+    "debug": "^3.1.0",
+    "moment": "^2.11.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "mocha": "^5.0.5"
+  }
+}
