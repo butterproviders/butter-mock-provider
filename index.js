@@ -69,8 +69,8 @@ module.exports = class MockProvider extends ButterProvider {
         })
     }
 
-    details(id, oldData) {
-        return debugAndResolve('details', Object.assign(oldData, mockData[id]))
+    detail(id, oldData) {
+        return debugAndResolve('details', Object.assign({}, mockData[id], oldData))
     }
 
     random() {
