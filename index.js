@@ -59,6 +59,7 @@ const debugAndResolve = (context, ret) => {
 module.exports = class MockProvider extends ButterProvider {
     constructor (args, config= defaultConfig) {
         super(args, config)
+        this.mockData = mockData
     }
 
     fetch() {
