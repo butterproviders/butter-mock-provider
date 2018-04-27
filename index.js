@@ -68,7 +68,7 @@ module.exports = class MockProvider extends ButterProvider {
 
     fetch() {
         return debugAndResolve('fetch', {
-            results: [Object.values(mockData)],
+            results: Object.values(mockData),
             hasMore: false
         })
     }
