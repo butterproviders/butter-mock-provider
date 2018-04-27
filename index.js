@@ -52,8 +52,12 @@ const mockData = Array.from(Array(99)).reduce((a, c ,i) => (
 ), {})
 
 const debugAndResolve = (context, ret) => {
-    debug(context, 'returning', JSON.stringify(ret, null, 2))
-    return Promise.resolve(ret)
+    debug(context, 'delaying return of', JSON.stringify(ret, null, 2))
+    return new Promise((accept) => (
+        setTimeout(() => (
+            accept(ret)
+        ), 200)
+    ))
 }
 
 module.exports = class MockProvider extends ButterProvider {
