@@ -81,8 +81,8 @@ module.exports = class MockProvider extends ButterProvider {
         return debugAndResolve('random', mockData[42])
     }
 
-    update(fail) {
-        if (fail) {
+    update(shouldSucceed) {
+        if (! shouldSucceed) {
             return debugAndResolve('update', null)
         }
 
