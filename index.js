@@ -80,4 +80,12 @@ module.exports = class MockProvider extends ButterProvider {
     random() {
         return debugAndResolve('random', mockData[42])
     }
+
+    update(fail) {
+        if (fail) {
+            return debugAndResolve('update', null)
+        }
+
+        return this.fetch().then(r => r.results)
+    }
 }
