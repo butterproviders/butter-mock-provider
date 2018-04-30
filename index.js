@@ -24,7 +24,7 @@ const mockData = Array.from(Array(99)).reduce((a, c ,i) => (
             id: i,
             type: ButterProvider.ItemType.MOVIE,
             title: `mock ${i}`,
-            sinopsis: `the marvelous adventure of the big break of mock ${i}`,
+            synopsis: `the marvelous adventure of the big break of mock ${i}`,
             year: 1970 + i,
             rating: i % 9,
             backdrop: `http://imgur.com/${i}`,
